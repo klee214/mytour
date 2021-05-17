@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "compile:sass" :"node-sass sass/main.scss css/style.css -w" 
+    "compile:sass": "sass sass/main.scss css/style.css --watch"
   },
   "repository": {
     "type": "git",
@@ -16,7 +16,7 @@
     "url": "https://github.com/klee214/mytour-front-end/issues"
   },
   "homepage": "https://github.com/klee214/mytour-front-end#readme",
-  "devDependencies": {
-    "node-sass": "^6.0.0"
+  "dependencies": {
+    "sass": "^1.32.13"
   }
 }

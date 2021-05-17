@@ -1,0 +1,35 @@
+@import "../abstract/variables";
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: $light-white;
+}
+
+.heading-primary {
+  text-transform: uppercase;
+  color: $light-white;
+  backface-visibility: hidden; // prevent last character from swaying when animation
+
+  &--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation-name: moveinleft;
+    animation-timing-function: ease-out;
+    animation-duration: 1s;
+  }
+
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    letter-spacing: 1.7rem;
+    animation-name: moveinright;
+    animation-timing-function: ease-out;
+    animation-duration: 1s;
+    margin-bottom: 5rem;
+  }
+}

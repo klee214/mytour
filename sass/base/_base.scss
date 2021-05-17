@@ -1,0 +1,17 @@
+/* This is the global selector */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; /* inherit the properties */
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box; /* without padding and margin */
+  padding: 3rem;
+}
