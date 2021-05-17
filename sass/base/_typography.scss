@@ -5,7 +5,7 @@ body {
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.7;
-  color: $light-white;
+  color: $dark-grey;
 }
 
 .heading-primary {
@@ -31,5 +31,22 @@ body {
     animation-timing-function: ease-out;
     animation-duration: 1s;
     margin-bottom: 5rem;
+  }
+}
+
+.heading-secondary {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 3.5rem;
+  font-weight: 700;
+  background-image: linear-gradient(to right, $light-green, $dark-green);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 0.2rem;
+  transition: all 0.2s;
+  &:hover {
+    transform: skewY(2deg) skewY(1.5deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba($real-dark, $alpha: 0.2);
   }
 }
