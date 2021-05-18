@@ -106,12 +106,33 @@ body {
   text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 
+.heading-tertiary {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: 16px;
+}
+.paragraph:not(:last-child) {
+  margin: 0 0 3rem 0;
+}
+
 .u-text-center {
   text-align: center;
 }
 
-.u-margin-bottom-8 {
+.u-margin-bottom-l {
   margin-bottom: 8rem;
+}
+
+.u-margin-bottom-m {
+  margin-bottom: 4rem;
+}
+
+.u-margin-bottom-s {
+  margin-bottom: 1.5rem;
 }
 
 .section-about {
@@ -165,6 +186,61 @@ body {
   transition: all 0.4s;
 }
 
+.btn-text:visited, .btn-text:link {
+  text-decoration: none;
+  color: #7ed56f;
+  border-bottom: 1px solid #7ed56f;
+  font-size: 16px;
+  display: inline-block;
+  padding: 3px;
+  transition: all 0.3s;
+}
+.btn-text:hover {
+  background: #7ed56f;
+  color: #fff;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+.btn-text:active {
+  transform: translateY(0px);
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+.composition {
+  position: relative;
+}
+.composition__photo {
+  width: 55%;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.5);
+  position: absolute;
+  transition: all 0.2s;
+  outline-offset: 2rem;
+  border-radius: 0.2rem;
+  z-index: 10;
+}
+.composition__photo:hover {
+  z-index: 20;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+  transform: translateY(1rem);
+  transform: scale(1.1);
+  outline: 1.5rem solid #7ed56f;
+}
+.composition:hover .composition__photo:not(:hover) {
+  transform: scale(0.9);
+}
+.composition__photo--p1 {
+  left: 0%;
+  top: -2rem;
+}
+.composition__photo--p2 {
+  right: 0%;
+  top: 2rem;
+}
+.composition__photo--p3 {
+  left: 20%;
+  top: 10rem;
+}
+
 .header {
   position: relative;
   height: 95vh;
@@ -209,14 +285,9 @@ body {
   padding: 3rem;
 }
 
-.test {
-  max-width: 114rem;
-  margin: 8rem auto;
-}
-
 .row {
-  color: aliceblue;
-  background-color: #2eac82;
+  max-width: 114rem;
+  margin: 0 auto;
 }
 .row::after {
   display: table;
@@ -228,7 +299,6 @@ body {
 }
 .row [class^=col-] {
   float: left;
-  background-color: #aa6b1d;
 }
 .row [class^=col-]:not(:last-child) {
   margin-right: 2rem;

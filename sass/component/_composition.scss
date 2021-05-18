@@ -1,0 +1,42 @@
+@import "../abstract/variables";
+
+.composition {
+  position: relative;
+
+  &__photo {
+    width: 55%; // 55% of the parent
+    box-shadow: 0 1.5rem 4rem rgba($color: $real-dark, $alpha: 0.5);
+    position: absolute; // parent to relative
+    transition: all 0.2s;
+    outline-offset: 2rem;
+    border-radius: .2rem;
+    z-index: 10;
+  }
+
+  &__photo:hover {
+    z-index: 20;
+    box-shadow: 0 1rem 2rem rgba($color: $real-dark, $alpha: 0.5);
+    transform: translateY(1rem);
+    transform: scale(1.1);
+    outline: 1.5rem solid $light-green;
+    
+  }
+
+  &:hover &__photo:not(:hover){
+      transform: scale(0.9);
+  }
+
+  &__photo--p1 {
+    left: 0%;
+    top: -2rem;
+  }
+  &__photo--p2 {
+    right: 0%;
+    top: 2rem;
+  }
+
+  &__photo--p3 {
+    left: 20%;
+    top: 10rem;
+  }
+}
