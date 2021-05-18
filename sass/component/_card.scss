@@ -1,0 +1,45 @@
+@import "../abstract/variables";
+
+.card {
+  position: relative;
+  height: 50rem;
+  perspective: 150rem;
+  -ms-perspective: 150rem;
+
+  &__side {
+    border-radius: 3px;
+    overflow: hidden;
+    color: #fff;
+    height: 50rem;
+    transition: all 0.8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    box-shadow: 0 1.5rem 4rem rgba($real-dark, $alpha: 0.15);
+
+    &--front {
+      background-color: $light-white;
+    }
+
+    &--back {
+      &--1 {
+        background-image: linear-gradient(
+          to right bottom,
+          $light-orange,
+          $medium-orange
+        );
+      }
+      transform: rotateY(180deg);
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+}
