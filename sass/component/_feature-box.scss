@@ -1,0 +1,32 @@
+@import "../abstract/variables";
+
+.feature-box {
+  text-align: center;
+  min-height: 33rem;
+  background-color: rgba($light-white, $alpha: 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($real-dark, $alpha: 0.15);
+  transition: transform 0.2s;
+
+  &__icon {
+    background-image: linear-gradient(
+      to right bottom,
+      rgba($light-green, 0.8),
+      rgba($dark-green, 0.8)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 6rem;
+    background-image: linear-gradient();
+    margin-bottom: 0.5rem;
+  }
+
+  &:hover {
+    transform: translateY(-1.5rem) scale(1.03);
+  }
+  &__text {
+  }
+}
