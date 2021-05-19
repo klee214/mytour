@@ -406,8 +406,6 @@ body {
 }
 
 .story {
-  width: 75%;
-  margin: 0 auto;
   box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
   background-color: #fff;
   border-radius: 3px;
@@ -415,20 +413,47 @@ body {
   font-size: 16px;
   transform: skewX(-12deg);
 }
+.story__text {
+  width: 75%;
+  margin: 0 auto;
+}
+.story__figcaption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  font-size: 1.7rem;
+  text-align: center;
+  color: #fff;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
 .story > * {
   transform: skewX(12deg);
 }
 .story__shape {
   width: 15rem;
   height: 15rem;
-  background-color: orangered;
   float: left;
   clip-path: circle(50% at 50% 50%);
   shape-outside: circle(50% at 50% 50%);
+  overflow: hidden;
   transform: translate(-2rem, -1rem) skewX(12deg);
+  backface-visibility: hidden;
+}
+.story__shape:hover .story__figcaption {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+.story__shape:hover .story__img {
+  transform: scale(1);
+  filter: blur(3px) brightness(80%);
 }
 .story__img {
+  backface-visibility: hidden;
   height: 100%;
+  transition: all 0.3s ease;
+  transform: scale(1.3) translateX(-2rem);
 }
 
 .header {
