@@ -6,6 +6,92 @@
   perspective: 150rem;
   -ms-perspective: 150rem;
 
+  &__detail {
+    padding: 3rem;
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+        color: $real-dark;
+        &:not(:last-child) {
+          border-bottom: 1px solid $light-grey;
+        }
+      }
+    }
+  }
+
+  &__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: $light-white;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    width: 75%;
+
+    &-span {
+      padding: 1rem 1.5rem;
+      box-decoration-break: clone;
+      &--1 {
+        background-image: linear-gradient(
+          to right bottom,
+          $light-orange,
+          $medium-orange
+        );
+      }
+      &--2 {
+        background-image: linear-gradient(
+          to right bottom,
+          $light-green,
+          $medium-green
+        );
+      }
+      &--3 {
+        background-image: linear-gradient(
+          to right bottom,
+          $light-blue,
+          $medium-blue
+        );
+      }
+    }
+  }
+
+  &__picture {
+    height: 20rem;
+    background-blend-mode: screen;
+    background-size: cover;
+    &--1 {
+      background-image: linear-gradient(
+          to right bottom,
+          $light-orange,
+          $medium-orange
+        ),
+        url("../../img/nat-5.jpg");
+    }
+    &--2 {
+      background-image: linear-gradient(
+          to right bottom,
+          $light-green,
+          $medium-green
+        ),
+        url("../../img/nat-6.jpg");
+    }
+    &--3 {
+      background-image: linear-gradient(
+          to right bottom,
+          $light-blue,
+          $medium-blue
+        ),
+        url("../../img/nat-7.jpg");
+    }
+  }
+
   &__side {
     border-radius: 3px;
     overflow: hidden;
@@ -31,6 +117,20 @@
           $medium-orange
         );
       }
+      &--2 {
+        background-image: linear-gradient(
+          to right bottom,
+          $light-green,
+          $medium-green
+        );
+      }
+      &--3 {
+        background-image: linear-gradient(
+          to right bottom,
+          $light-blue,
+          $medium-blue
+        );
+      }
       transform: rotateY(180deg);
     }
   }
@@ -41,5 +141,29 @@
 
   &:hover &__side--back {
     transform: rotateY(0);
+  }
+
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+  }
+
+  &__price-box {
+    text-align: center;
+    color: $light-white;
+    margin-bottom: 8rem;
+  }
+
+  &__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+  &__price-value {
+    font-size: 6rem;
+    font-weight: 100;
   }
 }
