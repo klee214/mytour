@@ -1,0 +1,29 @@
+@import ".././abstract/variables";
+
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba($real-dark, $alpha: 0.1);
+  background-color: $light-white;
+  border-radius: 3px;
+  padding: 6rem;
+  font-size: $default-font-size;
+  transform: skewX(-12deg);
+
+  & > * {
+    transform: skewX(12deg);
+  }
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    background-color: orangered;
+    float: left;
+    clip-path: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    transform: translate(-2rem, -1rem) skewX(12deg);
+  }
+
+  &__img {
+    height: 100%;
+  }
+}
