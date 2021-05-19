@@ -56,16 +56,17 @@
   &:visited,
   &:link {
     text-decoration: none;
-    color: $light-green;
-    border-bottom: 1px solid $light-green;
+    color: $dark-green;
+    border-bottom: 1px solid $dark-green;
     font-size: $default-font-size;
     display: inline-block;
-    padding: 3px;
+    padding: 6px;
+    border-radius: 3px;
     transition: all 0.3s;
   }
 
   &:hover {
-    background: $light-green;
+    background: $dark-green;
     color: $light-white;
     box-shadow: 0 1rem 2rem rgba($real-dark, 0.2);
     transform: translateY(-2px);

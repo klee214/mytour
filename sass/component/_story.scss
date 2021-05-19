@@ -8,6 +8,11 @@
   font-size: $default-font-size;
   transform: skewX(-12deg);
 
+  &__btn {
+    margin: 8rem 0 0 0;
+    text-align: center;
+  }
+
   &__text {
     width: 75%;
     margin: 0 auto;
