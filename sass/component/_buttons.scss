@@ -1,6 +1,7 @@
 .btn {
   &:visited,
-  &:link {
+  &:link,
+  & {
     position: relative;
     text-transform: uppercase;
     text-decoration: none;
@@ -9,6 +10,7 @@
     display: inline-block;
     border-radius: 10rem;
     transition: transform 0.2s;
+    border: none;
   }
 
   &:hover {
@@ -34,6 +36,16 @@
     }
   }
 
+  &--green {
+    background-color: $medium-green;
+    color: $light-white;
+
+    &::after {
+      background-color: $medium-green;
+      color: $light-white;
+    }
+  }
+
   &--animation {
     animation: moveindown 0.5s ease-out 0.25s;
     animation-fill-mode: backwards;
@@ -54,7 +66,8 @@
 }
 .btn-text {
   &:visited,
-  &:link {
+  &:link,
+  & {
     text-decoration: none;
     color: $dark-green;
     border-bottom: 1px solid $dark-green;
@@ -74,6 +87,6 @@
 
   &:active {
     transform: translateY(0px);
-    box-shadow: 0 .5rem 2rem rgba($real-dark, 0.2);
+    box-shadow: 0 0.5rem 2rem rgba($real-dark, 0.2);
   }
 }
