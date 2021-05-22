@@ -1,5 +1,7 @@
 @import url("../abstract/_variables.scss");
 @import url("../abstract/_variables.scss");
+@import url("../abstract/_variables.scss");
+@import url("../abstract/_mixin.scss");
 @keyframes moveinleft {
   0% {
     opacity: 0;
@@ -213,7 +215,7 @@ body {
 }
 .btn--green {
   background-color: #55c57a;
-  color: #fff;
+  color: #fff !important;
 }
 .btn--green::after {
   background-color: #55c57a;
@@ -708,8 +710,18 @@ body {
   border-top: 1px solid #f7f7f7;
 }
 
+.navigation {
+  text-align: center;
+}
 .navigation__checkbox {
   display: none;
+}
+.navigation__checkbox:checked ~ .navigation__background {
+  transform: scale(80);
+}
+.navigation__checkbox:checked ~ .navigation__nav {
+  width: 100%;
+  opacity: 1;
 }
 .navigation__button {
   background: #fff;
@@ -720,6 +732,8 @@ body {
   right: 6rem;
   border-radius: 50%;
   z-index: 2000;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.4);
+  cursor: pointer;
 }
 .navigation__background {
   height: 6rem;
@@ -730,15 +744,17 @@ body {
   right: 6.5rem;
   background-image: radial-gradient(#7ed56f, #28b485);
   z-index: 1000;
-  transform: scale(80);
+  transition: transform 0.8s cubic-bezier(0.7, 0.36, 0.31, 0.95);
 }
 .navigation__nav {
+  opacity: 0;
   height: 100vh;
-  width: 100%;
+  width: 0%;
   position: fixed;
   top: 0;
   right: 0;
   z-index: 1500;
+  transition: all 0.8s cubic-bezier(0.55, -0.23, 0.32, 1.38);
 }
 .navigation__list {
   position: absolute;
@@ -773,6 +789,89 @@ body {
   background-position: 100%;
   color: #7ed56f;
   transform: translateX(1rem);
+}
+.navigation__icon {
+  position: relative;
+  margin-top: 3.5rem;
+}
+.navigation__icon, .navigation__icon::before, .navigation__icon::after {
+  width: 3rem;
+  height: 2px;
+  background-color: #777;
+  display: inline-block;
+}
+.navigation__icon::before, .navigation__icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  transition: all 0.2s;
+}
+.navigation__icon::before {
+  top: -0.8rem;
+}
+.navigation__icon::after {
+  top: 0.8rem;
+}
+.navigation__button:hover .navigation__icon::before {
+  top: -1rem;
+}
+.navigation__button:hover .navigation__icon::after {
+  top: 1rem;
+}
+.navigation__checkbox:checked + .navigation__button .navigation__icon {
+  background-color: transparent;
+}
+.navigation__checkbox:checked + .navigation__button .navigation__icon::after {
+  transform: rotate(-45deg);
+  top: 0;
+}
+.navigation__checkbox:checked + .navigation__button .navigation__icon::before {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+.popup {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3000;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.popup__content {
+  width: 75%;
+  background-color: #fff;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.8);
+  border-radius: 3px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: table;
+  overflow: hidden;
+}
+.popup__left {
+  display: table-cell;
+  width: 33.3333333%;
+}
+.popup__right {
+  display: table-cell;
+  vertical-align: middle;
+  width: 66.6666667%;
+  padding: 3rem 5rem;
+}
+.popup__img {
+  display: block;
+  width: 100%;
+}
+.popup__text {
+  font-size: 1.4rem;
+  margin-bottom: 4rem;
+  column-count: 2;
+  column-gap: 4rem;
+  column-rule: 1px solid #777;
+  hyphens: auto;
 }
 
 /*# sourceMappingURL=style.css.map */

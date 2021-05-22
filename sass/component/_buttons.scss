@@ -38,7 +38,7 @@
 
   &--green {
     background-color: $medium-green;
-    color: $light-white;
+    color: $light-white  !important;
 
     &::after {
       background-color: $medium-green;
