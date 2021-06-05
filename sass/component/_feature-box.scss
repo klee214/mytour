@@ -8,6 +8,10 @@
   padding: 2.5rem;
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba($real-dark, $alpha: 0.15);
+
+  @include respond(tab-port){
+    padding: 2rem;
+  }
   transition: transform 0.2s;
 
   &__icon {
@@ -22,11 +26,13 @@
     font-size: 6rem;
     background-image: linear-gradient();
     margin-bottom: 0.5rem;
+
+    @include respond(tab-port){
+      margin-bottom: 0;
+    }
   }
 
   &:hover {
     transform: translateY(-1.5rem) scale(1.03);
-  }
-  &__text {
   }
 }

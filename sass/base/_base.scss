@@ -1,3 +1,5 @@
+@import url('../abstract/_mixin.scss');
+
 /* This is the global selector */
 *,
 *::before,
@@ -23,4 +25,8 @@ html {
 body {
   box-sizing: border-box; /* without padding and margin */
   padding: 3rem;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
 }

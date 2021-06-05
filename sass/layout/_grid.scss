@@ -5,15 +5,31 @@
   max-width: $grid-width;
   margin: 0 auto;
   @include clearfix;
-
+  @include respond(tab-port) {
+    max-width: 90%;
+    padding: 0 3rem;
+  }
   &:not(:last-child) {
     margin-bottom: $horizontal-gutter;
+
+    @include respond(tab-port) {
+      margin-bottom: $horizontal-gutter-small;
+    }
   }
 
   [class^="col-"] {
     float: left;
     &:not(:last-child) {
       margin-right: $vertical-gutter;
+
+      @include respond(tab-port) {
+        margin-right: 0;
+        margin-bottom: $horizontal-gutter-small;
+      }
+    }
+
+    @include respond(tab-port) {
+      width: 100% !important;
     }
   }
 

@@ -12,6 +12,12 @@
   visibility: hidden;
   opacity: 0;
   transition: all 0.2s;
+  @supports (
+    (backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px))
+  ) {
+    backdrop-filter: blur(10px);
+    background-color: rgba($color: #000000, $alpha: 0.1);
+  }
 
   &:target {
     opacity: 1;
@@ -52,16 +58,29 @@
     transition: all 0.4s 0.2s;
     display: table;
     overflow: hidden;
+
+    @include respond(tab-port) {
+      display: block;
+    }
   }
   &__left {
     display: table-cell;
     width: 33.3333333%;
+
+    @include respond(tab-port) {
+      display: none;
+    }
   }
   &__right {
     display: table-cell;
     vertical-align: middle;
     width: 66.6666667%;
     padding: 3rem 5rem;
+
+    @include respond(tab-port) {
+      width: 80%;
+      display: block;
+    }
   }
   &__img {
     display: block;
@@ -75,5 +94,9 @@
     column-gap: 4rem;
     column-rule: 1px solid $dark-grey;
     hyphens: auto;
+
+    @include respond(tab-port) {
+      column-count: 1;
+    }
   }
 }

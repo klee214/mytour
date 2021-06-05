@@ -5,8 +5,21 @@
   background-color: $light-white;
   border-radius: 3px;
   padding: 6rem;
+  padding-left: 9rem;
   font-size: $default-font-size;
+  width: 75%;
+  margin: 0 auto;
   transform: skewX(-12deg);
+
+  @include respond(tab-port) {
+    width: 100%;
+    padding: 4rem;
+    padding-left: 7rem;
+  }
+
+  @include respond(phone) {
+    transform: skewX(0);
+  }
 
   &__btn {
     margin: 8rem 0 0 0;
@@ -14,8 +27,12 @@
   }
 
   &__text {
+    transform: skewX(12deg);
     width: 75%;
     margin: 0 auto;
+    @include respond(phone) {
+      transform: skewX(0);
+    }
   }
 
   &__figcaption {
@@ -30,9 +47,6 @@
     transition: all 0.3s ease;
   }
 
-  & > * {
-    transform: skewX(12deg);
-  }
   &__shape {
     width: 15rem;
     height: 15rem;
@@ -42,6 +56,10 @@
     overflow: hidden;
     transform: translate(-2rem, -1rem) skewX(12deg);
     backface-visibility: hidden;
+
+    @include respond(phone) {
+      transform: translateX(-3rem) skewX(0);
+    }
 
     &:hover .story__figcaption {
       transform: translate(-50%, -50%);

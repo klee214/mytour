@@ -4,10 +4,18 @@
 
 .u-margin-bottom-l {
   margin-bottom: 8rem;
+
+  @include respond(tab-port){
+    margin-bottom: 5rem !important;
+  }
 }
 
 .u-margin-bottom-m {
   margin-bottom: 4rem;
+
+  @include respond(tab-port){
+    margin-bottom: 3rem !important;
+  }
 }
 .u-margin-bottom-s {
   margin-bottom: 1.5rem;

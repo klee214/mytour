@@ -21,12 +21,6 @@
 1800 big desktop
 */
 
-@mixin respond-phone {
-  @media (max-width: 600px) {
-    @content;
-  }
-}
-
 @mixin respond($breakpoint) {
   @if $breakpoint==phone {
     @media (max-width: 37.5em) {
@@ -43,8 +37,8 @@
       @content;
     }
   }
-  @if $breakpoint==bid-desktop {
-    @media (max-width: 112.5em) {
+  @if $breakpoint==big-desktop {
+    @media (min-width: 112.5em) {
       @content;
     }
   }
